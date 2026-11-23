@@ -1,0 +1,227 @@
+================================================================================
+INITIATIVES ET CHOIX « SCIENCE DES MATÉRIAUX » PRIS LORS DU TRAITEMENT DES DONNÉES
+================================================================================
+
+Contexte du projet :
+Ce document recense toutes les décisions, hypothèses et simplifications liées à
+la science des matériaux qui ont été prises lors de la construction des deux
+tables finales de modélisation :
+  - calcination_dataset.csv : 111 essais d'activation thermique (80 argiles, 21 études)
+  - mechanical_dataset.csv  : 142 essais d'activation mécanochimique (29 argiles, 17 études)
+  - dropped_rows.csv        : 15 essais exclus avec justification
+
+Pour chaque partie, vous trouverez d'abord une VERSION RÉSUMÉE / VULGARISÉE
+(pour comprendre rapidement l'idée), suivie de la VERSION DÉTAILLÉE destinée
+aux professeurs de science des matériaux.
+
+
+================================================================================
+PARTIE 1 : HYPOTHÈSES CHIMIQUES ET MINÉRALOGIQUES AJOUTÉES
+================================================================================
+
+--- Version résumée / vulgarisée ---
+
+Quand on a nettoyé les données, on n'a pas inventé de chiffres pour remplir les
+cases vides, sauf dans trois cas précis :
+  1. Pour une poudre de kaolinite commerciale « pure » (6 essais d'une étude où
+     les auteurs n'avaient pas publié d'analyse), on a mis sa formule chimique
+     théorique idéale (100 % pure). C'est le point n°1 à faire valider par les
+     professeurs.
+  2. Pour les autres argiles, on a écrit « 0 % » pour un minéral uniquement
+     quand on était sûr qu'il était absent : soit parce que les autres minéraux
+     mesurés additionnaient déjà presque 100 % (au moins 94 %), soit parce que
+     l'argile était un minéral pur d'une autre famille (sans kaolinite). Sinon,
+     la case a été laissée vide.
+  3. On a regroupé deux minéraux très proches (illite et muscovite/mica) dans
+     une même colonne, et on a récupéré un paramètre de broyage manquant (le
+     ratio billes/poudre) grâce à un article plus récent qui citait les mêmes
+     auteurs.
+
+--- Version détaillée (pour les professeurs) ---
+
+1. Composition stœchiométrique idéale attribuée à la kaolinite Merck
+   (Plusquellec et al., 2023 — 6 lignes : 1 TA + 5 MCA) :
+   - L'article d'origine (ICCC 2023, D0011) décrit le matériau comme une
+     kaolinite de référence Merck « nominalement pure », sans publier de XRF ni
+     de QXRD.
+   - Initiative prise : saisie de la composition stœchiométrique théorique de
+     la kaolinite (kaolinite_pct = 100 %, SiO2 = 46,5 %, Al2O3 = 39,5 %,
+     LOI = 14,0 %), en laissant les oxydes d'impuretés vides (NaN).
+   - Point de vigilance : même une kaolinite commerciale de laboratoire
+     contient en pratique quelques % d'impuretés (quartz, illite/mica ou
+     fraction amorphe) ; une pureté exacte de 100 % est une idéalisation.
+
+2. Règle des « zéros connus » en minéralogie (seuil à 94 % et minéraux 2:1) :
+   - Lorsque la somme de l'ensemble des phases quantifiées par QXRD dans la
+     source est >= 94 % (seuil fixé pour inclure Mañosa et al., dont la somme
+     des phases cristallines est de 94,8 % hors phase amorphe de 5,1 %), les
+     phases non listées parmi les quatre exportées (kaolinite, illite/mica,
+     quartz, calcite) ont été mises à 0 wt%.
+   - Pour les minéraux 2:1 de référence (Zhao 2025 illite/montmorillonite,
+     Marsh 2024 montmorillonites, Marsh 2023 Mnt, Plusquellec 2023 illite,
+     Koufany 2025 Ref1/Ref2-SCC, Marsh 2026 Mt), kaolinite_pct a été fixé à
+     0 wt% par définition.
+   - Point de vigilance : en DRX/Rietveld, « non détecté » correspond à une
+     teneur inférieure à la limite de détection (~1–2 wt%), et certaines argiles
+     montmorillonitiques naturelles (ex. Marsh 2026 Mt) ne sont pas des
+     minéraux purs à 100 %.
+   - En revanche, aucun oxyde XRF ni paramètre de procédé n'a jamais été mis à
+     0 par défaut (toutes les mesures absentes restent vides / NaN).
+
+3. Regroupement illite / muscovite (illite_mica_pct) :
+   - Les teneurs en illite et en muscovite/mica ont été regroupées dans une
+     colonne unique, conformément à la pratique courante en QXRD (recouvrement
+     des réflexions basales), bien que leurs comportements à l'activation
+     puissent différer.
+
+4. Complément de BPR = 25 sur Plusquellec 2023 (argile illitique IC, 4 lignes) :
+   - Le ratio massique billes/poudre (ball_to_powder_ratio = 25) a été renseigné
+     à partir du jeu de données Zenodo de Marsh et al. (2026), qui rapporte
+     cette valeur sur la base d'une communication personnelle avec les auteurs.
+
+
+================================================================================
+PARTIE 2 : SIMPLIFICATIONS SUR LES VARIABLES MATÉRIAUX CONSERVÉES OU RETIRÉES
+================================================================================
+
+--- Version résumée / vulgarisée ---
+
+Toutes les colonnes du tableau d'origine n'ont pas été gardées dans les tables
+finales :
+  - On a retiré la taille des grains mesurée APRÈS le traitement (D50), car on
+    ne la connaît pas avant de lancer le four ou le broyeur (la garder aurait
+    été une forme de « triche » pour prédire le résultat).
+  - On a retiré l'énergie consommée par le broyeur (kWh/kg), parce qu'elle
+    n'était mesurée que sur 3 argiles et qu'elle dégradait les prédictions.
+  - On a retiré certains minéraux moins souvent mesurés — dont la smectite,
+    pourtant une famille d'argile réactive — parce qu'il y avait trop de cases
+    vides. Le modèle doit donc les repérer indirectement via la composition
+    chimique globale (les oxydes).
+  - On n'a pas fait de distinction entre les petits fours de laboratoire et les
+    deux fours rotatifs pilotes présents dans les données.
+
+--- Version détaillée (pour les professeurs) ---
+
+Toutes les variables retirées restent archivées dans r3_unified_dataset.csv,
+mais n'ont pas été exportées dans calcination_dataset.csv et
+mechanical_dataset.csv après évaluation en validation croisée groupée par argile
+(GroupKFold sur parent_clay_id) :
+
+1. Retrait de la smectite (smectite_pct) et des autres phases mineures
+   (mixed_is_pct, chlorite_pct, dolomite_pct, feldspar_pct, other_minerals_pct,
+   raw_amorphous_pct, total_clay_pct) ainsi que de Na2O et TiO2 :
+   - Raison statistique : faible taux de remplissage et absence de gain sur la
+     RMSE en validation croisée groupée.
+   - Implication matériaux importante : la smectite n'est évidemment pas inerte
+     (elle atteint 450–500 J/g après calcination ou broyage). Dans les tables
+     finales, sa présence n'est plus représentée explicitement en minéralogie,
+     mais uniquement de manière indirecte par le profil chimique XRF (SiO2,
+     Al2O3, MgO, CaO, K2O, LOI).
+
+2. Retrait de la granulométrie post-traitement (post_d50_um) :
+   - Choix physique et méthodologique : en activation mécanochimique, le D50
+     après broyage est une conséquence directe du broyage (médiateur
+     post-traitement), donc une fuite de données (data leakage) si l'objectif
+     est de prédire la réactivité avant activation à partir de la matière brute
+     et des réglages procédé.
+
+3. Retrait de l'énergie spécifique de broyage (milling_energy_kwh_per_kg) :
+   - Variable physiquement centrale en MCA, mais disponible uniquement sur 3
+     argiles (Marsh et al., 2026) ; son inclusion dégradait l'erreur de
+     validation croisée. Le broyage est donc représenté par ses paramètres
+     opératoires (durée, vitesse en rpm, ratio billes/poudre, adjuvant TEA).
+
+4. Retrait de furnace_type (fours statiques vs fours rotatifs pilotes) :
+   - Les essais en four rotatif pilote (Dhandapani 2023 Westgate industrial
+     kiln et Müller 2026 pilot 820 °C) sont conservés dans calcination_dataset.csv
+     sans variable indicatrice les distinguant des fours à moufle statiques de
+     laboratoire.
+
+
+================================================================================
+PARTIE 3 : DÉCISIONS DE PÉRIMÈTRE PHYSIQUE (ESSAIS ET SOURCES EXCLUS)
+================================================================================
+
+--- Version résumée / vulgarisée ---
+
+Pour comparer des choses comparables, on a retiré plusieurs catégories d'essais
+qui ne suivaient pas les mêmes règles physiques ou qui n'étaient pas fiables :
+  - Les mélanges argile + verre recyclé ou silicate de sodium (6 essais) : ce
+    n'est plus de l'argile pure.
+  - Le chauffage « flash » en quelques secondes (1 essai) : trop différent d'un
+    passage classique au four.
+  - Les essais sans température de four précise et sous atmosphère spéciale
+    (6 essais).
+  - Les doublons d'argiles déjà présents dans une autre étude (2 essais).
+  - Les essais combinant broyage + four (17 essais) : trop peu nombreux pour en
+    tirer un modèle fiable.
+  - Une grande compilation faite par d'autres auteurs (Bahhou, 125 essais) :
+    pas assez fiable et sans source précise ligne par ligne.
+
+--- Version détaillée (pour les professeurs) ---
+
+1. Exclusions en amont du dépôt (retirées de r3_unified_dataset.csv) :
+   - Activation mécano-thermique combinée (MTA, 17 lignes sur ~6 argiles) :
+     effectif trop faible pour modéliser la synergie broyage + calcination
+     basse température sans surapprentissage.
+   - Compilation secondaire Bahhou et al. (2026, S22 — 125 lignes) : absence de
+     traçabilité primaire ligne par ligne, présence de valeurs > 1000 J/g et de
+     paires contradictoires, risque de doublons cachés avec des études
+     primaires. En validation croisée groupée, son ajout dégradait la RMSE sur
+     les autres sources de 161 à 188 J/g.
+
+2. Exclusions journalisées dans dropped_rows.csv (15 lignes) :
+   - Co-broyage avec additifs réactifs (Callender 2026, 6 lignes) : argile
+     co-broyée avec 15 % de poudre de verre sodocalcique (WGP) et/ou de
+     métasilicate de sodium (Na2SiO3). La chaleur R³ mesurée inclut la
+     réactivité de l'additif (matériau composite, non comparable à une argile
+     seule).
+   - Calcination flash industrielle (Panzer 2024, échantillon PP — 1 ligne) :
+     temps de séjour de quelques secondes ; la température nominale (600 °C)
+     n'est pas comparable à une calcination avec palier (15–240 min).
+   - Température non spécifiée et refroidissement réducteur (Martirena-Hernandez
+     & Duverger 2026, 6 lignes) : température de calcination non rattachée à
+     chaque barre de la figure R³, et étude comparant refroidissement oxydant
+     vs réducteur (contrôle couleur / réduction du fer).
+   - Doublons inter-publications (Vallina et al. 2024, SAu-1 et SWy-3 — 2 lignes) :
+     mêmes standards de montmorillonite et mêmes températures que Koufany et al.
+     (2025, Ref1-SCC et Ref2-SCC), dont les valeurs numériques exactes ont été
+     conservées.
+
+
+================================================================================
+PARTIE 4 : HARMONISATION DES PROTOCOLES R³ ET DES DONNÉES
+================================================================================
+
+--- Version résumée / vulgarisée ---
+
+Les expériences viennent de 36 études différentes dans le monde. On a considéré
+que les différentes variantes officielles du test R³ (américaine, européenne,
+internationale), qui mesurent toutes la chaleur sur 7 jours à 40 °C, pouvaient
+être mises dans le même tableau. De même, on a gardé ensemble les chiffres
+exacts lus dans des tableaux et ceux lus approximativement sur des graphiques,
+car séparer les deux n'améliorait pas la précision.
+
+--- Version détaillée (pour les professeurs) ---
+
+1. Équivalence des protocoles R³ standards (40 °C, 7 jours, J/g SCM) :
+   - Les mesures issues d'ASTM C1897-20, du protocole RILEM TC 267-TRM et de
+     DIN EN 17979 (méthode A) sont regroupées sous la même variable cible
+     r3_heat_7d_j_per_g.
+   - Les données de Zunino & Scrivener (2024) initialement exprimées en J/g de
+     solides ont été converties en J/g de SCM via le facteur 4,5 indiqué par
+     les auteurs.
+
+2. Qualité métrologique des valeurs R³ (exactes vs digitalisées sur figures) :
+   - Les valeurs numériques exactes et les valeurs lues sur graphiques (ex.
+     Ruckes 2026, Muzenda 2025, Mañosa 2024 DoE, Plusquellec 2023 Fig. 2) sont
+     conservées ensemble sans pondération : des tests en validation croisée
+     groupée ont montré que ni le filtrage ni la pondération par qualité
+     n'amélioraient la RMSE. L'étiquette de qualité reste consultable dans
+     r3_unified_dataset.csv via sample_id.
+
+3. Limite connue sur Marsh et al. (2026) :
+   - 32 lignes de broyage (argiles K et F) n'ont aucune composition chimique ni
+     minéralogique publiée (ni dans l'article ni sur Zenodo) ; elles restent
+     néanmoins dans mechanical_dataset.csv (composition laissée vide).
+
