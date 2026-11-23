@@ -16,17 +16,17 @@ The full column-by-column documentation (meaning, unit, role, missing values) is
 
 | File | Rows | Distinct clays (`parent_clay_id`) |
 |---|---|---|
-| `calcination_dataset.csv` | 111 | 80 |
-| `mechanical_dataset.csv` | 141 | 29 |
-| `dropped_rows.csv` | 16 | rows removed, with the reason |
+| `calcination_dataset.csv` | 111 | 79 |
+| `mechanical_dataset.csv` | 142 | 28 |
+| `dropped_rows.csv` | 15 | rows removed, with the reason |
 
-22 clays (`parent_clay_id`) appear in both tables. For a combined table: `pd.concat` the two files.
+21 clays (`parent_clay_id`) appear in both tables. For a combined table: `pd.concat` the two files.
 
-Removed rows: 6 Callender rows co-milled with glass / sodium silicate (R³ of another material), 1 Panzer PP (flash calcination), 6 Martirena 2026 (calcination temperature not reported; oxidising vs reducing cooling), 2 Vallina 2024 (= Koufany 2025 Ref1/Ref2-SCC), 1 exact internal duplicate (Plusquellec IC_M300_60_TEA1p0).
+Removed rows: 6 Callender rows co-milled with glass / sodium silicate (R³ of another material), 1 Panzer PP (flash calcination), 6 Martirena 2026 (calcination temperature not reported; oxidising vs reducing cooling), 2 Vallina 2024 (= Koufany 2025 Ref1/Ref2-SCC).
 
 ## Missing values set to 0 (known zeros)
-- Exported minerals (kaolinite, illite/mica, quartz, calcite): 0 when the source mineralogy is complete (sum of all quantified phases ≥ 94 %).
-- `kaolinite_pct`: 0 for pure 2:1 reference minerals (Zhao illite / montmorillonite, Marsh montmorillonites, Plusquellec illite, Koufany Ref1/Ref2, Marsh 2026 Mt).
+- Exported minerals (kaolinite, illite/mica, quartz, calcite): 0 when the source mineralogy is complete (sum of all quantified phases ≥ 94 %, excluding nominal non-XRD mixtures).
+- `kaolinite_pct`: 0 for pure 2:1 reference minerals (Zhao illite / montmorillonite, Marsh montmorillonites, Plusquellec illite, Koufany Ref1/Ref2).
 - `grinding_aid_tea_wt_pct`: 0 when no grinding aid is reported.
 - Plusquellec "Kln" (Merck reference kaolinite): theoretical kaolinite composition (kaolinite 100, SiO2 46.5, Al2O3 39.5, LOI 14.0), entered in `r3_unified_dataset.csv`.
 - Everything else (oxides, process settings, minerals from a partial mineralogy) stays empty: not measured, not zero.

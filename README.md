@@ -22,8 +22,8 @@ Two ready-to-use tables, one per activation route. Each row is **one activated s
 
 | File | Rows | Distinct clays | Sources | Scope |
 | :--- | :---: | :---: | :---: | :--- |
-| [`research/clay-activation-r3/processed/calcination_dataset.csv`](research/clay-activation-r3/processed/calcination_dataset.csv) | 111 | 80 | 21 | Calcination with a dwell (static lab furnaces, one pilot rotary kiln), 400–1050 °C, air cooling. No flash calcination. |
-| [`research/clay-activation-r3/processed/mechanical_dataset.csv`](research/clay-activation-r3/processed/mechanical_dataset.csv) | 142 | 29 | 17 | Laboratory planetary ball milling (Retsch PM100/PM400, Fritsch P6), clay milled alone. |
+| [`research/clay-activation-r3/processed/calcination_dataset.csv`](research/clay-activation-r3/processed/calcination_dataset.csv) | 111 | 79 | 21 | Calcination with a dwell (static lab furnaces, one pilot rotary kiln), 400–1050 °C, air cooling. No flash calcination. |
+| [`research/clay-activation-r3/processed/mechanical_dataset.csv`](research/clay-activation-r3/processed/mechanical_dataset.csv) | 142 | 28 | 17 | Laboratory planetary ball milling (Retsch PM100/PM400, Fritsch P6), clay milled alone. |
 
 Rows removed while building the tables are listed with their reason in [`processed/dropped_rows.csv`](research/clay-activation-r3/processed/dropped_rows.csv) (duplicates, calcination without temperature, flash calcination, clay co-milled with glass / sodium silicate).
 
@@ -43,10 +43,10 @@ Missing counts are given as calcination / milling (out of 111 / 142 rows). "—"
 | `sample_id` | both | Unique sample identifier; join key to `r3_unified_dataset.csv` (reference URL, source table, notes, composition method, R³ quality label) | Identifier, **not a feature** | 0 / 0 | — |
 | `parent_clay_id` | both | Raw clay identifier (same publication + same raw composition). The same clay appears in several rows (several temperatures or milling settings) and can appear in both files | **Group key for cross-validation** (`GroupKFold`), not a feature | 0 / 0 | — |
 | `reference` | both | Source publication (author, year) | Filtering, leave-one-source-out validation; **not a feature** | 0 / 0 | — |
-| `kaolinite_pct` | both | Kaolinite in the raw clay (wt%); the main reactive mineral once activated | Feature (composition) | 19 / 44 | 0 where the source mineralogy is complete (sum of all quantified phases ≥ 94 %) and for pure 2:1 reference minerals (illite, montmorillonite). Theoretical value (100) for the Plusquellec reference kaolinite. Otherwise left empty |
+| `kaolinite_pct` | both | Kaolinite in the raw clay (wt%); the main reactive mineral once activated | Feature (composition) | 19 / 61 | 0 where the source mineralogy is complete (sum of all quantified phases ≥ 94 %) and for pure 2:1 reference minerals (illite, montmorillonite). Theoretical value (100) for the Plusquellec reference kaolinite. Otherwise left empty |
 | `illite_mica_pct` | both | Illite + muscovite/mica (wt%); poorly reactive | Feature (composition) | 49 / 67 | 0 where the mineralogy is complete; otherwise left empty |
 | `quartz_pct` | both | Quartz (wt%); inert, dilutes reactivity | Feature (composition) | 50 / 67 | 0 where the mineralogy is complete; otherwise left empty |
-| `calcite_pct` | both | Calcite (wt%) | Feature (composition) | 55 / 90 | 0 where the mineralogy is complete; otherwise left empty |
+| `calcite_pct` | both | Calcite (wt%) | Feature (composition) | 55 / 91 | 0 where the mineralogy is complete; otherwise left empty |
 | `sio2_pct` | both | SiO₂ of the raw clay, XRF (wt%) | Feature (composition) | 8 / 54 | Left empty (not measured ≠ 0) |
 | `al2o3_pct` | both | Al₂O₃ (wt%); proxy for clay / kaolinite content | Feature (composition) | 8 / 54 | Left empty |
 | `fe2o3_pct` | both | Fe₂O₃ (wt%); iron lowers reactivity | Feature (composition) | 9 / 59 | Left empty |
@@ -59,14 +59,14 @@ Missing counts are given as calcination / milling (out of 111 / 142 rows). "—"
 | `milling_time_min` | milling | Milling duration (min) | Feature (process) | — / 0 | — |
 | `mill_rpm` | milling | Mill rotation speed (rpm); the most important milling feature | Feature (process) | — / 5 | Left empty |
 | `ball_to_powder_ratio` | milling | Ball-to-powder mass ratio (–) | Feature (process) | — / 11 | Left empty |
-| `grinding_aid_tea_wt_pct` | milling | Triethanolamine grinding aid (wt%) | Feature (process) | — / 0 | 0 when no grinding aid is reported (only Plusquellec used one) |
+| `grinding_aid_tea_wt_pct` | milling | Triethanolamine grinding aid (wt%) | Feature (process) | — / 0 | 0 when no grinding aid is reported (Plusquellec and Muzenda used TEA) |
 | `r3_heat_7d_j_per_g` | both | **Target**: cumulative R³ heat at 7 days, 40 °C (J per g of activated clay), ASTM C1897 / RILEM / EN 17979 method A | **Target** | 0 / 0 | — |
 
 ### Missing values: rules
 
 - **A 0 is written only when the absence is known**: a mineral not detected in a complete mineralogy, kaolinite in a pure 2:1 mineral, no grinding aid. Oxides and process settings are never set to 0.
 - **Everything else is left empty** (= not measured). Recommended model: `HistGradientBoostingRegressor`, which handles missing values natively. For models that cannot (random forest, linear models), impute with the **median of the training fold only**, inside the cross-validation, and add a `*_missing` indicator column. Do not impute with statistics computed on the whole table (leakage), and do not use a global mean for minerals (missing values come from whole sources or clay types).
-- **Known gap**: 32 milling rows (Marsh 2026 clays "K" and "F") have no composition at all; it is not published (paper or Zenodo).
+- **Known gap**: 48 milling rows (Marsh 2026 clays "K", "Mt" and "F") have no composition at all; it is not published (paper or Zenodo).
 
 ### How to validate
 

@@ -1,28 +1,28 @@
 sample_id,parent_clay_id,reference,kaolinite_pct,illite_mica_pct,quartz_pct,calcite_pct,sio2_pct,al2o3_pct,fe2o3_pct,cao_pct,mgo_pct,k2o_pct,loi_pct,milling_time_min,mill_rpm,ball_to_powder_ratio,grinding_aid_tea_wt_pct,r3_heat_7d_j_per_g
-Alvarez25_KM-350-120,AlvarezCoscojuela-C001,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,,,,,49.85,36.31,0.47,0.16,0.11,0.69,12.03,120.0,350.0,,0.0,620.3
-Alvarez25_KM-300-60,AlvarezCoscojuela-C001,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,,,,,49.85,36.31,0.47,0.16,0.11,0.69,12.03,60.0,300.0,,0.0,470.5
-Manosa25_MM,Maosa-C026,Mañosa et al. (2025),16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,90.0,400.0,20.0,0.0,558.0
+Alvarez25_KM-350-120,Manosa-C025,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,,,,,49.85,36.31,0.47,0.16,0.11,0.69,12.03,120.0,350.0,,0.0,620.3
+Alvarez25_KM-300-60,Manosa-C025,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,,,,,49.85,36.31,0.47,0.16,0.11,0.69,12.03,60.0,300.0,,0.0,470.5
+Manosa25_MM,Manosa-C026,Mañosa et al. (2025),16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,90.0,400.0,20.0,0.0,558.0
 Marsh24Mnt_Ca-Mont-MCA,Marsh-C031,Marsh et al. (2024) - montmorillonite,0.0,,,,60.75,15.91,1.16,1.73,2.55,0.49,15.7,60.0,,,0.0,403.0
 Marsh24Mnt_Na-Mont-MCA,Marsh-C032,Marsh et al. (2024) - montmorillonite,0.0,,,,63.81,15.05,3.06,1.93,1.4,0.53,10.6,60.0,,,0.0,394.0
 Marsh24Kln_LoFe-MCA,Marsh-C030,Marsh et al. (2024) - kaolin,73.5,17.9,3.0,0.0,49.1,34.8,1.1,0.1,0.3,3.3,10.9,60.0,500.0,25.0,0.0,702.1
 Marsh24Kln_HiFe-MCA,Marsh-C029,Marsh et al. (2024) - kaolin,62.7,0.0,1.0,0.0,29.5,25.9,24.4,0.5,0.7,0.1,14.9,60.0,500.0,25.0,0.0,513.6
-Manosa24_Kln82-MCA,Maosa-C025,Mañosa et al. (2024),82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.03,120.0,350.0,20.0,0.0,629.0
+Manosa24_Kln82-MCA,Manosa-C025,Mañosa et al. (2024),82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.03,120.0,350.0,20.0,0.0,629.0
 Muzenda25_B1_MCA8h,Muzenda-C036,Muzenda et al. (2025),70.5,3.4,15.1,,52.5,30.9,1.55,0.27,0.27,0.99,11.6,480.0,60.0,,0.15,290.0
 Muzenda25_B1_MCA12h,Muzenda-C036,Muzenda et al. (2025),70.5,3.4,15.1,,52.5,30.9,1.55,0.27,0.27,0.99,11.6,720.0,60.0,,0.15,605.0
 Muzenda25_B2_MCA8h,Muzenda-C035,Muzenda et al. (2025),71.3,0.0,4.4,0.3,37.0,30.4,14.8,0.27,0.2,0.05,14.2,480.0,60.0,,0.15,255.0
 Muzenda25_B2_MCA12h,Muzenda-C035,Muzenda et al. (2025),71.3,0.0,4.4,0.3,37.0,30.4,14.8,0.27,0.2,0.05,14.2,720.0,60.0,,0.15,483.0
-Manosa24_MuscMCA_250_90,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,90.0,250.0,20.0,0.0,230.0
-Manosa24_MuscMCA_300_30,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,30.0,300.0,20.0,0.0,180.0
-Manosa24_MuscMCA_300_90,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,90.0,300.0,20.0,0.0,361.0
-Manosa24_MuscMCA_350_30,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,30.0,350.0,20.0,0.0,282.0
-Manosa24_MuscMCA_350_60,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,60.0,350.0,20.0,0.0,410.0
-Manosa24_MuscMCA_350_90,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,90.0,350.0,20.0,0.0,454.0
-Manosa24_MuscMCA_350_120,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,120.0,350.0,20.0,0.0,512.0
-Manosa24_DoE_250_60,Maosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,60.0,250.0,20.0,0.0,530.0
-Manosa24_DoE_250_120,Maosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,120.0,250.0,20.0,0.0,620.0
-Manosa24_DoE_300_90,Maosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,90.0,300.0,20.0,0.0,680.0
-Manosa24_DoE_350_60,Maosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,60.0,350.0,20.0,0.0,700.0
-Manosa24_DoE_350_120,Maosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,120.0,350.0,20.0,0.0,650.0
+Manosa24_MuscMCA_250_90,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,90.0,250.0,20.0,0.0,230.0
+Manosa24_MuscMCA_300_30,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,30.0,300.0,20.0,0.0,180.0
+Manosa24_MuscMCA_300_90,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,90.0,300.0,20.0,0.0,361.0
+Manosa24_MuscMCA_350_30,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,30.0,350.0,20.0,0.0,282.0
+Manosa24_MuscMCA_350_60,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,60.0,350.0,20.0,0.0,410.0
+Manosa24_MuscMCA_350_90,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,90.0,350.0,20.0,0.0,454.0
+Manosa24_MuscMCA_350_120,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,120.0,350.0,20.0,0.0,512.0
+Manosa24_DoE_250_60,Manosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,60.0,250.0,20.0,0.0,530.0
+Manosa24_DoE_250_120,Manosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,120.0,250.0,20.0,0.0,620.0
+Manosa24_DoE_300_90,Manosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,90.0,300.0,20.0,0.0,680.0
+Manosa24_DoE_350_60,Manosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,60.0,350.0,20.0,0.0,700.0
+Manosa24_DoE_350_120,Manosa-C025,"Mañosa et al. (2024), Materials 17, 4651",82.0,5.3,5.7,0.0,49.85,36.31,0.47,0.16,0.11,0.69,12.5,120.0,350.0,20.0,0.0,650.0
 Callender26_Clay_M200,Callender-C005,"Callender (2026), University of Texas at Austin MSc thesis",,,,,55.9,37.8,2.3,0.3,0.3,1.2,,60.0,200.0,25.0,0.0,147.0
 Callender26_Clay_M400,Callender-C005,"Callender (2026), University of Texas at Austin MSc thesis",,,,,55.9,37.8,2.3,0.3,0.3,1.2,,60.0,400.0,25.0,0.0,592.0
 Callender26_Clay_M500,Callender-C005,"Callender (2026), University of Texas at Austin MSc thesis",,,,,55.9,37.8,2.3,0.3,0.3,1.2,,60.0,500.0,25.0,0.0,591.0
@@ -36,7 +36,7 @@ Plusquellec23_Ill_M250_20,Plusquellec-Plusquellec23_Ill,"Plusquellec et al. (202
 Plusquellec23_Ill_M250_40,Plusquellec-Plusquellec23_Ill,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",0.0,,,,,,,,,,,40.0,250.0,25.0,0.0,193.0
 Plusquellec23_Ill_M250_60,Plusquellec-Plusquellec23_Ill,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",0.0,,,,,,,,,,,60.0,250.0,25.0,0.0,194.0
 Plusquellec23_Ill_M300_60,Plusquellec-Plusquellec23_Ill,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",0.0,,,,,,,,,,,60.0,300.0,25.0,0.0,204.0
-Plusquellec23_IllQ80_20_M300_60,Plusquellec-C049,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",0.0,80.0,20.0,0.0,,,,,,,,60.0,300.0,25.0,0.0,235.0
+Plusquellec23_IllQ80_20_M300_60,Plusquellec-C049,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",,80.0,20.0,,,,,,,,,60.0,300.0,25.0,0.0,235.0
 Plusquellec23_IC_M500_20,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,20.0,500.0,25.0,0.0,331.0
 Plusquellec23_IC_M250_40,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,40.0,250.0,25.0,0.0,185.0
 Plusquellec23_IC_M250_60,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,60.0,250.0,25.0,0.0,190.0
@@ -64,8 +64,8 @@ Ruckes26_BS54_MCA60,Ruckes-C055,Ruckes et al. (2026),0.0,39.2,29.8,0.0,58.2,21.7
 Ruckes26_BS54_MCA120,Ruckes-C055,Ruckes et al. (2026),0.0,39.2,29.8,0.0,58.2,21.7,8.0,0.5,0.9,3.5,4.9,120.0,500.0,10.0,0.0,450.0
 MarcoGibert26_H250_60,MarcoGibert-C027,Marco-Gibert et al. (2026),,,,,49.4,35.8,0.25,0.01,,0.02,13.8,60.0,250.0,20.0,0.0,301.0
 MarcoGibert26_H350_120,MarcoGibert-C027,Marco-Gibert et al. (2026),,,,,49.4,35.8,0.25,0.01,,0.02,13.8,120.0,350.0,20.0,0.0,570.0
-Marsh26_Mt_D5,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,5.0,550.0,25.0,0.0,262.4
-Marsh26_Mt_B5,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,550.0,5.0,0.0,276.7
+Marsh26_Mt_D5,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,5.0,550.0,25.0,0.0,262.4
+Marsh26_Mt_B5,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,5.0,0.0,276.7
 Xu26_CG58_DM10,Xu-C079,"Xu, Marsh, Dhar & Scrivener (2026)",57.8,10.2,13.0,,44.07,32.91,4.73,0.12,0.29,0.46,15.97,10.0,,,0.0,181.4
 Xu26_CG58_DM30,Xu-C079,"Xu, Marsh, Dhar & Scrivener (2026)",57.8,10.2,13.0,,44.07,32.91,4.73,0.12,0.29,0.46,15.97,30.0,,,0.0,462.6
 Xu26_CG58_DM45,Xu-C079,"Xu, Marsh, Dhar & Scrivener (2026)",57.8,10.2,13.0,,44.07,32.91,4.73,0.12,0.29,0.46,15.97,45.0,,,0.0,596.2
@@ -77,6 +77,7 @@ Plusquellec23_IC_M300_60_TEA0p2,Plusquellec-C048,"Plusquellec et al. (2023), 16t
 Plusquellec23_IC_M300_60_TEA0p3,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,60.0,300.0,25.0,0.3,288.0
 Plusquellec23_IC_M300_60_TEA0p5,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,60.0,300.0,25.0,0.5,298.0
 Plusquellec23_IC_M300_60_TEA0p75,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,60.0,300.0,25.0,0.75,287.0
+Plusquellec23_IC_M300_60_TEA1p0,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,60.0,300.0,25.0,1.0,288.0
 Plusquellec23_IC_M300_60_TEA1p5,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,60.0,300.0,25.0,1.5,281.0
 Plusquellec23_IC_M300_60_TEA2p0,Plusquellec-C048,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",5.0,35.0,20.0,,65.0,18.0,8.1,1.0,1.6,4.1,,60.0,300.0,25.0,2.0,271.0
 Cipriano26_NC_M1,Cipriano-C006,Cipriano et al. (2026),,,,,66.5,19.5,3.1,1.5,0.1,0.3,8.3,5.0,500.0,10.0,0.0,138.0
@@ -105,20 +106,20 @@ Marsh26_K_B5,Marsh-Marsh26_K,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,
 Marsh26_K_B10,Marsh-Marsh26_K,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,10.0,0.0,408.8
 Marsh26_K_B15,Marsh-Marsh26_K,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,15.0,0.0,578.3
 Marsh26_K_B35,Marsh-Marsh26_K,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,35.0,0.0,727.1
-Marsh26_Mt_D10,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,10.0,550.0,25.0,0.0,287.2
-Marsh26_Mt_D20,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,20.0,550.0,25.0,0.0,336.9
-Marsh26_Mt_D30,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,30.0,550.0,25.0,0.0,476.0
-Marsh26_Mt_D60,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,550.0,25.0,0.0,446.9
-Marsh26_Mt_D120,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,120.0,550.0,25.0,0.0,373.8
-Marsh26_Mt_R150,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,150.0,25.0,0.0,209.3
-Marsh26_Mt_R250,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,250.0,25.0,0.0,241.9
-Marsh26_Mt_R350,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,350.0,25.0,0.0,300.1
-Marsh26_Mt_R450,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,450.0,25.0,0.0,380.7
-Marsh26_Mt_R650,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,650.0,25.0,0.0,476.8
-Marsh26_Mt_B2,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,550.0,2.0,0.0,278.1
-Marsh26_Mt_B10,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,550.0,10.0,0.0,326.5
-Marsh26_Mt_B15,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,550.0,15.0,0.0,403.9
-Marsh26_Mt_B35,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",0.0,,,,,,,,,,,60.0,550.0,35.0,0.0,473.6
+Marsh26_Mt_D10,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,10.0,550.0,25.0,0.0,287.2
+Marsh26_Mt_D20,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,20.0,550.0,25.0,0.0,336.9
+Marsh26_Mt_D30,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,30.0,550.0,25.0,0.0,476.0
+Marsh26_Mt_D60,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,25.0,0.0,446.9
+Marsh26_Mt_D120,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,120.0,550.0,25.0,0.0,373.8
+Marsh26_Mt_R150,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,150.0,25.0,0.0,209.3
+Marsh26_Mt_R250,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,250.0,25.0,0.0,241.9
+Marsh26_Mt_R350,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,350.0,25.0,0.0,300.1
+Marsh26_Mt_R450,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,450.0,25.0,0.0,380.7
+Marsh26_Mt_R650,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,650.0,25.0,0.0,476.8
+Marsh26_Mt_B2,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,2.0,0.0,278.1
+Marsh26_Mt_B10,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,10.0,0.0,326.5
+Marsh26_Mt_B15,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,15.0,0.0,403.9
+Marsh26_Mt_B35,Marsh-Marsh26_Mt,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,35.0,0.0,473.6
 Marsh26_F_D5,Marsh-Marsh26_F,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,5.0,550.0,25.0,0.0,134.9
 Marsh26_F_D10,Marsh-Marsh26_F,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,10.0,550.0,25.0,0.0,226.8
 Marsh26_F_D20,Marsh-Marsh26_F,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,20.0,550.0,25.0,0.0,351.2
@@ -135,8 +136,8 @@ Marsh26_F_B5,Marsh-Marsh26_F,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,
 Marsh26_F_B10,Marsh-Marsh26_F,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,10.0,0.0,260.1
 Marsh26_F_B15,Marsh-Marsh26_F,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,15.0,0.0,442.4
 Marsh26_F_B35,Marsh-Marsh26_F,"Marsh, Krishnan, Rahmon, Bernal & Ke (2026)",,,,,,,,,,,,60.0,550.0,35.0,0.0,503.5
-Manosa24_MuscMCA_250_120,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,120.0,250.0,20.0,0.0,270.0
-Manosa24_MuscMCA_300_60,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,60.0,300.0,20.0,0.0,270.0
-Manosa24_MuscMCA_300_120,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,120.0,300.0,20.0,0.0,410.0
-Manosa24_MuscMCA_400_30,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,30.0,400.0,20.0,0.0,370.0
-Manosa24_MuscMCA_400_60,Maosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,60.0,400.0,20.0,0.0,510.0
+Manosa24_MuscMCA_250_120,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,120.0,250.0,20.0,0.0,270.0
+Manosa24_MuscMCA_300_60,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,60.0,300.0,20.0,0.0,270.0
+Manosa24_MuscMCA_300_120,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,120.0,300.0,20.0,0.0,410.0
+Manosa24_MuscMCA_400_30,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,30.0,400.0,20.0,0.0,370.0
+Manosa24_MuscMCA_400_60,Manosa-C026,"Mañosa et al. (2024), Applied Clay Science",16.7,56.5,6.2,0.0,51.38,30.59,1.46,0.48,1.12,6.23,7.81,60.0,400.0,20.0,0.0,510.0
