@@ -55,7 +55,7 @@ Missing counts are given as calcination / milling (out of 111 / 142 rows). "—"
 | `k2o_pct` | both | K₂O (wt%); proxy for illite / mica | Feature (composition) | 18 / 59 | Left empty |
 | `loi_pct` | both | Loss on ignition (wt%): structural water (kaolinite ≈ 14 %) + CO₂ of carbonates | Feature (composition) | 33 / 72 | Left empty |
 | `calcination_temp_c` | calcination | Calcination temperature (°C) | Feature (process); the most important one. Non-monotonic effect (over-calcination above ~900 °C) | 0 / — | Rows without temperature are removed |
-| `dwell_min` | calcination | Time at temperature (min) | Feature (process) | 10 / — | Left empty in the file. At model time: native NaN handling, or training-fold median (60 min) + a `dwell_missing` indicator. Never 0 |
+| `dwell_min` | calcination | Time at temperature (min) | Feature (process) | 10 / — | Left empty in the file. At model time: native NaN handling, or training-fold median + a `missing_*` indicator (see [Model features](#model-features-computed-in-scriptsdatapy)). Never 0 |
 | `milling_time_min` | milling | Milling duration (min) | Feature (process) | — / 0 | — |
 | `mill_rpm` | milling | Mill rotation speed (rpm); the most important milling feature | Feature (process) | — / 5 | Left empty |
 | `ball_to_powder_ratio` | milling | Ball-to-powder mass ratio (–) | Feature (process) | — / 11 | Left empty |
@@ -67,6 +67,23 @@ Missing counts are given as calcination / milling (out of 111 / 142 rows). "—"
 - **A 0 is written only when the absence is known**: a mineral not detected in a complete mineralogy, kaolinite in a pure 2:1 mineral, no grinding aid. Oxides and process settings are never set to 0.
 - **Everything else is left empty** (= not measured). Recommended model: `HistGradientBoostingRegressor`, which handles missing values natively. For models that cannot (random forest, linear models), impute with the **median of the training fold only**, inside the cross-validation, and add a `*_missing` indicator column. Do not impute with statistics computed on the whole table (leakage), and do not use a global mean for minerals (missing values come from whole sources or clay types).
 - **Known gap**: 48 milling rows (Marsh 2026 clays "K", "Mt" and "F") have no composition at all; it is not published (paper or Zenodo).
+
+### Model features (computed in `scripts/data.py`)
+
+These columns are **not in the CSVs**: `load_dataset()` and `add_missing_indicators()` compute them at load time, row by row (nothing is estimated from the data, so there is no leakage). Missing values stay NaN; median imputation is done inside each training fold by `make_imputer()`.
+
+| Column | File | Definition | Why |
+| :--- | :--- | :--- | :--- |
+| `temp_c_centered_100` | calcination | (`calcination_temp_c` − 800) / 100 | Centring keeps T and T² weakly correlated |
+| `temp_c_centered_100_sq` | calcination | square of the above | R³ rises with dehydroxylation then drops with over-calcination: a linear model needs a curvature term |
+| `log_dwell_min` | calcination | ln(`dwell_min`) | Diminishing returns of longer dwell |
+| `log_milling_time_min` | milling | ln(`milling_time_min`) | Milling energy ≈ rpm³ × BPR × time (Burgio et al. 1991); in logs each exponent becomes a coefficient |
+| `log_mill_rpm` | milling | ln(`mill_rpm`) | idem |
+| `log_bpr` | milling | ln(`ball_to_powder_ratio`) | idem |
+| `grinding_aid_used` | milling | 1 if `grinding_aid_tea_wt_pct` > 0, else 0 | The TEA dose varies within a single series, so a linear dose term extrapolates badly. Only 15 / 142 rows (3 clays, Plusquellec and Muzenda) are 1 |
+| `missing_<cols>` | both | 1 if the value is missing, else 0; one column per distinct missingness pattern (e.g. `missing_illite_mica_pct+quartz_pct`) | Lets a linear model use the fact that a measurement was not reported; identical patterns share one column to avoid exact collinearity |
+
+Feature sets (`feature_list(kind, feature_set)`): `process` (process terms only), `process+mineralogy` (+ kaolinite, illite/mica, quartz, calcite), `all` (+ oxides and LOI).
 
 ### How to validate
 
