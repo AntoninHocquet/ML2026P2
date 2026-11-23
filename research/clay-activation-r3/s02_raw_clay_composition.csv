@@ -1,0 +1,9 @@
+source_id,source_locator,report_page,sample_id,kaolinite_tga_pct,kaolinite_xrd_pct,two_to_one_phases_xrd_pct,sio2_pct,al2o3_pct,fe2o3_pct,bet_m2_per_g
+S02,Tables 10 and 11,4,A1,88.3,80.1,4.1,47.0,36.0,1.2,13.1
+S02,Tables 10 and 11,4,B1,72.1,69.6,2.7,45.3,33.3,1.7,25.2
+S02,Tables 10 and 11,4,B2,71.0,69.4,,34.8,30.5,15.9,46.1
+S02,Tables 10 and 11,4,C2,53.1,50.9,4.6,50.0,25.0,8.0,26.6
+S02,Tables 10 and 11,4,C3,47.2,46.6,2.2,49.3,30.4,6.0,43.0
+S02,Tables 10 and 11,4,C4,42.9,44.2,15.6,54.6,28.5,2.3,22.7
+S02,Tables 10 and 11,4,D1,24.9,21.1,14.4,63.6,20.8,4.2,17.9
+S02,Tables 10 and 11,4,D3,,,66.5,54.1,14.5,9.8,90.2
